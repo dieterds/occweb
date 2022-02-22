@@ -1,15 +1,15 @@
 {
-    "name": "OCC Web",
-    "description": "OCC Web terminal",
-    "type": "project",
-    "license": "AGPL",
-    "authors": [
-        {
-            "name": "Adphi"
-        }
-    ],
-    "require": {},
-    "require-dev": {
-        "phpunit/phpunit": "^5.4"
-    }
+	"name" : "OCC Web",
+	"description" : "OCC Web terminal",
+	"type" : "project",
+	"license" : "AGPL",
+	"authors" : [{
+			"name" : "Adphi"
+		}, {
+			"name" : "dieterds"
+		}
+	],
+	"require-dev" : {
+		"phpunit/phpunit" : "^5.4"
+	}
 }
