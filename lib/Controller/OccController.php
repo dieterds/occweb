@@ -24,11 +24,16 @@ class OccController extends Controller
 
     private $output;
 
+    private $blacklist;
+
     public function __construct(ILogger $logger, $AppName, IRequest $request, $userId)
     {
         parent::__construct($AppName, $request);
         $this->logger = new OccLogger();
         $this->userId = $userId;
+        $this->blacklist = array(
+            "maintenance:mode on"
+        );
 
         $this->application = new Application(OC::$server->getConfig(), OC::$server->getEventDispatcher(), new FakeRequest(), $this->logger, OC::$server->query(MemoryInfo::class));
         $this->application->setAutoExit(false);
@@ -70,6 +75,12 @@ class OccController extends Controller
     public function cmd($command)
     {
         $this->logger->debug($command);
+        if (in_array($command, $this->blacklist)) {
+            $this->logger->debug("Command blacklist");
+            return new DataResponse(array(
+                "error" => "\n" . '\u001b[37;41m                                 \u001b[39;49m' . "\n" . '\u001b[37;41m  Command blacklisted.        \u001b[39;49m' . "\n" . '\u001b[37;41m                                 \u001b[39;49m' . "\n\n"
+            ), 403);
+        }
         $input = new StringInput($command);
         $response = $this->run($input);
         $this->logger->debug($response);

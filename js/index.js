@@ -28,7 +28,11 @@
           }).done(function (response) {
             term.echo('\n' + response).resume();
           }).fail(function (response, code) {
-            term.echo('\n' + response).resume();
+	    if (response.status === 403) {
+		term.echo(response.responseJSON.error).resume();
+	    } else {
+                term.echo('\n[[;red;]Error]\n' + response).resume();
+	    }
           });
         }
       }, {

@@ -4,9 +4,12 @@
 	"type" : "project",
 	"license" : "AGPL",
 	"authors" : [{
-			"name" : "Adphi"
+			"name" : "Adphi",
+			"role" : "Creator"
 		}, {
 			"name" : "dieterds"
+		}, {
+			"name" : "CptainObvious"
 		}
 	],
 	"require-dev" : {
