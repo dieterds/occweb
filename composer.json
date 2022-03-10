@@ -7,9 +7,11 @@
 			"name" : "Adphi",
 			"role" : "Creator"
 		}, {
-			"name" : "dieterds"
+			"name" : "dieterds",
+			"role" : "Contributor"
 		}, {
-			"name" : "CptainObvious"
+			"name" : "CptainObvious",
+			"role" : "Contributor"
 		}
 	],
 	"require-dev" : {
