@@ -32,7 +32,7 @@ class OccController extends Controller
         $this->logger = new OccLogger();
         $this->userId = $userId;
         $this->blacklist = array(
-            "maintenance:mode on"
+            "maintenance:mode --on"
         );
 
         $this->application = new Application(OC::$server->getConfig(), OC::$server->getEventDispatcher(), new FakeRequest(), $this->logger, OC::$server->query(MemoryInfo::class));
