@@ -15,7 +15,7 @@
     <repository>https://github.com/dieterds/occweb</repository>
     <screenshot>https://github.com/dieterds/occweb/raw/master/appinfo/screenshot.png</screenshot>
     <dependencies>
-        <nextcloud min-version="13" max-version="18"/>
+        <nextcloud min-version="19" max-version="23"/>
     </dependencies>
     <navigations>
         <navigation role="admin">
